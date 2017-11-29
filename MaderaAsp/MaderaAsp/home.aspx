@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenu" runat="server">
     <div class="btns">
-        <div class="col-sm-6 col-xs-12 text-center"><asp:Button class="btn btnHome" ID="btnVisu" runat="server" OnClick="btnVisu_Click" Text="Visualiser les paiements" /></div>
+        <div class="col-sm-6 col-xs-12 text-center"><asp:Button class="btn btnHome" ID="btnVisu" runat="server" OnClick="btnVisu_Click" Text="Visualiser les devis" /></div>
         <div class="col-sm-6 col-xs-12 text-center"><asp:Button class="btn btnHome" ID="btnNew" runat="server" OnClick="btnNew_Click" Text="Nouveau devis" /></div>
     </div>
 </asp:Content>
