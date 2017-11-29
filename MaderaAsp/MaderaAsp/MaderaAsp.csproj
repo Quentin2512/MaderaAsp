@@ -146,6 +146,7 @@
     </Content>
     <Content Include="home.aspx" />
     <Content Include="Images\Logo_madera.png" />
+    <Content Include="ListeDevis.aspx" />
     <Content Include="Madera.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -222,6 +223,13 @@
     </Compile>
     <Compile Include="home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListeDevis.aspx.cs">
+      <DependentUpon>ListeDevis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListeDevis.aspx.designer.cs">
+      <DependentUpon>ListeDevis.aspx</DependentUpon>
     </Compile>
     <Compile Include="Madera.Master.cs">
       <DependentUpon>Madera.Master</DependentUpon>

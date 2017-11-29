@@ -16,7 +16,7 @@ namespace MaderaAsp
 
         protected void btnVisu_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("ListeDevis.aspx");
         }
 
         protected void btnNew_Click(object sender, EventArgs e)
