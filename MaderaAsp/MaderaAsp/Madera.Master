@@ -13,10 +13,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <header id="band1"><img src="/Images/Logo_madera.png" alt="logo" /></header>
+        <div id="band1"><img src="/Images/Logo_madera.png" alt="logo" /></div>
         <asp:ContentPlaceHolder ID="contenu" runat="server">
         </asp:ContentPlaceHolder>
-        <footer id="band2"></footer>
+        <div id="band2"></div>
     </form>
 </body>
 </html>
