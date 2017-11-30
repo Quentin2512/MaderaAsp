@@ -31,6 +31,15 @@ namespace MaderaAsp {
         protected global::System.Web.UI.WebControls.TextBox refProjet;
         
         /// <summary>
+        /// Contrôle client.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList client;
+        
+        /// <summary>
         /// Contrôle nomClient.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,33 @@ namespace MaderaAsp {
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox prenomClient;
+        
+        /// <summary>
+        /// Contrôle mailClient.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox mailClient;
+        
+        /// <summary>
+        /// Contrôle phoneClient.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox phoneClient;
+        
+        /// <summary>
+        /// Contrôle numClient.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox numClient;
         
         /// <summary>
         /// Contrôle adresseClient.
@@ -76,21 +112,12 @@ namespace MaderaAsp {
         protected global::System.Web.UI.WebControls.TextBox villeClient;
         
         /// <summary>
-        /// Contrôle mailClient.
+        /// Contrôle paysClient.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox mailClient;
-        
-        /// <summary>
-        /// Contrôle phoneClient.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox phoneClient;
+        protected global::System.Web.UI.WebControls.TextBox paysClient;
     }
 }

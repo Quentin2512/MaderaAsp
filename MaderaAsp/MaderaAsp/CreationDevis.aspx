@@ -11,25 +11,34 @@
                 <asp:TextBox runat="server" ID="nomProjet" TextMode="SingleLine" CssClass="form-control"></asp:TextBox><br/>
                 <asp:Label runat="server">Référence du projet :</asp:Label><br/>
                 <asp:TextBox runat="server" ID="refProjet" TextMode="SingleLine" CssClass="form-control"></asp:TextBox><br/>
-                <br/>
-                <asp:Button runat="server" Text="Valider" CssClass="btn btn-primary btnHome"/>
-            </div>   
-            <div class="col-md-6 col-sm-6 col-xs-12">
                 <h2>Client :</h2>
-                <asp:Label runat="server">Nom :</asp:Label><br/>
+                <asp:DropDownList ID="client" runat="server" class="form-control">
+                </asp:DropDownList><br />
+                <asp:Button runat="server" Text="Valider" CssClass="btn btn-primary btnVal"/>
+                <!--<asp:Label runat="server">Nom :</asp:Label><br/>
                 <asp:TextBox runat="server" ID="nomClient" TextMode="SingleLine" CssClass="form-control"></asp:TextBox><br/>
                 <asp:Label runat="server">Prenom :</asp:Label><br/>
                 <asp:TextBox runat="server" ID="prenomClient" TextMode="SingleLine" CssClass="form-control"></asp:TextBox><br/>
+                <asp:Label runat="server">Mail :</asp:Label><br/>
+                <asp:TextBox runat="server" ID="mailClient" TextMode="SingleLine" CssClass="form-control"></asp:TextBox><br/>
+                <asp:Label runat="server">Telephone :</asp:Label><br/>
+                <asp:TextBox runat="server" ID="phoneClient" TextMode="SingleLine" CssClass="form-control"></asp:TextBox><br/>
+            </div>   
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                -->
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <h2>Adresse :</h2>
+                <asp:Label runat="server">Numéro :</asp:Label><br/>
+                <asp:TextBox runat="server" ID="numClient" TextMode="SingleLine" CssClass="form-control"></asp:TextBox><br/>
                 <asp:Label runat="server">Adresse :</asp:Label><br/>
                 <asp:TextBox runat="server" ID="adresseClient" TextMode="SingleLine" CssClass="form-control"></asp:TextBox><br/>
                 <asp:Label runat="server">Code postal :</asp:Label><br/>
                 <asp:TextBox runat="server" ID="postalClient" TextMode="SingleLine" CssClass="form-control"></asp:TextBox><br/>
                 <asp:Label runat="server">Ville :</asp:Label><br/>
                 <asp:TextBox runat="server" ID="villeClient" TextMode="SingleLine" CssClass="form-control"></asp:TextBox><br/>
-                <asp:Label runat="server">Mail :</asp:Label><br/>
-                <asp:TextBox runat="server" ID="mailClient" TextMode="SingleLine" CssClass="form-control"></asp:TextBox><br/>
-                <asp:Label runat="server">Telephone :</asp:Label><br/>
-                <asp:TextBox runat="server" ID="phoneClient" TextMode="SingleLine" CssClass="form-control"></asp:TextBox><br/>
+                <asp:Label runat="server">Pays :</asp:Label><br/>
+                <asp:TextBox runat="server" ID="paysClient" TextMode="SingleLine" CssClass="form-control"></asp:TextBox>
             </div>
         </div>
     </div>
