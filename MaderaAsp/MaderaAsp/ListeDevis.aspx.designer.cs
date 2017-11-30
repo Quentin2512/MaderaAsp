@@ -11,5 +11,23 @@ namespace MaderaAsp {
     
     
     public partial class ListeDevis {
+        
+        /// <summary>
+        /// Contrôle F1Champs.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource F1Champs;
+        
+        /// <summary>
+        /// Contrôle F1ChampsView.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView F1ChampsView;
     }
 }
