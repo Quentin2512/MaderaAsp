@@ -21,7 +21,7 @@ namespace MaderaAsp
 
         protected void btnNew_Click(object sender, EventArgs e)
         {
-            Response.Redirect("caracteristics.aspx");
+            Response.Redirect("CreationDevis.aspx");
         }
     }
 }
