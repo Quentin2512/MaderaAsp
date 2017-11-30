@@ -15,18 +15,19 @@
     width: 100%;
     /*position: fixed;
     bottom: 0px;
-    left: 0px;
-    margin-top:150px;*/
+    left: 0px;*/
+    margin-top:50px;
     background-color: darkolivegreen;
 }
 .btns{
     margin-top:50px;
 }
-.btnHome{
-    height:100px;
-    width:500px;
-    font-size:30px;
-    margin-top:50px;
+.btnHome,
+.btnVal{
+    height: 100px;
+    width: 500px;
+    font-size: 30px;
+    margin: 20px;
 }
 h1 {
     color: #6E6356;
