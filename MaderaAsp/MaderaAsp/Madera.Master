@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Madera.master.cs" Inherits="MaderaAsp.Madera" %>
+﻿ <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Madera.master.cs" Inherits="MaderaAsp.Madera" %>
 
 <!DOCTYPE html>
 
