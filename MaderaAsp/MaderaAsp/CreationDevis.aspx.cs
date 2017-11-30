@@ -14,7 +14,8 @@ namespace MaderaAsp
         {
             DataSet ds = new DataSet();
             var connectionString = String.Format("Data Source={0};Version=3;", "./App_Data/Madera.db");
-            using (var con = new System.Data.SQLite.SQLiteConnection(connectionString))
+            //using (var con = new System.Data.SQLite.SQLiteConnection(connectionString))
+            using (System.Data.SQLite.SQLiteConnection con = new System.Data.SQLite.SQLiteConnection("data source=|DataDirectory|Madera.db"))
             {
                 con.Open();
                 using (var cmd = con.CreateCommand())
@@ -32,11 +33,12 @@ namespace MaderaAsp
                     int i = 0;
                     while(i < ds.Tables[0].Rows.Count)
                     {
-                        string nom = ds.Tables["nom"].Rows[i].ToString();
-                        string prenom = ds.Tables["prenom"].Rows[i].ToString();
-                        string mail = ds.Tables["mail"].Rows[i].ToString();
-                        string id_client = ds.Tables["id_client"].Rows[i].ToString();
+                        string nom = ds.Tables[0].Rows[i].ItemArray[1].ToString();
+                        string prenom = ds.Tables[0].Rows[i].ItemArray[2].ToString();
+                        string mail = ds.Tables[0].Rows[i].ItemArray[3].ToString();
+                        string id_client = ds.Tables[0].Rows[i].ItemArray[0].ToString();
                         client.Items.Add(new ListItem(nom + " " + prenom + " : " + mail, id_client));
+                        //client.Items.Add(new ListItem("toto","titi"));
                         i++;
                     }
                     con.Close();

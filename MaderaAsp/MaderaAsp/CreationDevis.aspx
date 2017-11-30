@@ -12,7 +12,7 @@
                 <asp:Label runat="server">Référence du projet :</asp:Label><br/>
                 <asp:TextBox runat="server" ID="refProjet" TextMode="SingleLine" CssClass="form-control"></asp:TextBox><br/>
                 <h2>Client :</h2>
-                <asp:DropDownList ID="client" runat="server" >
+                <asp:DropDownList ID="client" runat="server" class="form-control">
                 </asp:DropDownList><br />
                 <asp:Button runat="server" Text="Valider" CssClass="btn btn-primary btnVal"/>
                 <!--<asp:Label runat="server">Nom :</asp:Label><br/>
