@@ -14,7 +14,6 @@ namespace MaderaAsp
         {
             DataSet ds = new DataSet();
             var connectionString = String.Format("Data Source={0};Version=3;", "./App_Data/Madera.db");
-            //using (var con = new System.Data.SQLite.SQLiteConnection(connectionString))
             using (System.Data.SQLite.SQLiteConnection con = new System.Data.SQLite.SQLiteConnection("data source=|DataDirectory|Madera.db"))
             {
                 con.Open();
@@ -24,12 +23,6 @@ namespace MaderaAsp
                     cmd.CommandText = query;
                     System.Data.SQLite.SQLiteDataAdapter da = new System.Data.SQLite.SQLiteDataAdapter(cmd);
                     da.Fill(ds);
-                    /*if (ds.Tables[0].Rows.Count > 0)
-                    {
-                        client.DataSource = ds;
-                        client.DataBind();
-                        client.Items.Add(new ListItem())
-                    }*/
                     int i = 0;
                     while(i < ds.Tables[0].Rows.Count)
                     {
@@ -38,7 +31,6 @@ namespace MaderaAsp
                         string mail = ds.Tables[0].Rows[i].ItemArray[3].ToString();
                         string id_client = ds.Tables[0].Rows[i].ItemArray[0].ToString();
                         client.Items.Add(new ListItem(nom + " " + prenom + " : " + mail, id_client));
-                        //client.Items.Add(new ListItem("toto","titi"));
                         i++;
                     }
                     con.Close();
@@ -46,31 +38,78 @@ namespace MaderaAsp
             }
         }
 
-        protected void continuer()
+        protected void continuer(object o, System.EventArgs arg)
         {
-            string par = nomProjet + ";" + refProjet + ";" + nomClient + ";" + prenomClient + ";";
-            var connectionString = String.Format("Data Source={0};Version=3;", "./App_Data/test.sqlite");
-            using (var con = new System.Data.SQLite.SQLiteConnection(connectionString))
+            DataSet ds = new DataSet();
+            var connectionString = String.Format("Data Source={0};Version=3;", "./App_Data/Madera.db");
+            using (System.Data.SQLite.SQLiteConnection con = new System.Data.SQLite.SQLiteConnection("data source=|DataDirectory|Madera.db"))
             {
-                Console.Error.WriteLine(" ------> ");
                 con.Open();
                 using (var cmd = con.CreateCommand())
                 {
-                    DataSet ds = new DataSet();
-                    
-                    cmd.CommandText = "INSERT INTO devis(nom,date_devis,id_client,id_adresse) " +
-                    "VALUES(@nom, @date_devis, @id_client, @id_adresse)";
-                    cmd.Parameters.AddWithValue("@nom", nomClient);
-                    cmd.Parameters.AddWithValue("@date_devis", prenomClient);
-                    cmd.Parameters.AddWithValue("@id_client", mailClient);
-                    cmd.Parameters.AddWithValue("@id_adresse", phoneClient);
-                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "SELECT id_adresse FROM adresse" +
+                        "WHERE libelle = @libelle " +
+                        "AND numero = @numero " +
+                        "AND code_postal = @cp " +
+                        "AND villes = @ville " +
+                        "AND pays = @pays;";
+                    cmd.Parameters.AddWithValue("@libelle", adresseClient.Text);
+                    cmd.Parameters.AddWithValue("@numero", numClient.Text);
+                    cmd.Parameters.AddWithValue("@cp", postalClient.Text);
+                    cmd.Parameters.AddWithValue("@ville", villeClient.Text);
+                    cmd.Parameters.AddWithValue("@pays", paysClient.Text);
+                    System.Data.SQLite.SQLiteDataAdapter da = new System.Data.SQLite.SQLiteDataAdapter(cmd);
+                    da.Fill(ds);
+                    int i = 0;
+                    string id_adresse = "";
+                    if(ds.Tables[0].Rows.Count > 0)
+                    {
+                        while (i < ds.Tables[0].Rows.Count)
+                        {
+                            id_adresse = ds.Tables[0].Rows[i].ItemArray[0].ToString();
+                            i++;
+                        }
+                    }
+                    else
+                    {
+                        cmd.CommandText = "INSERT INTO adresse(libelle,numero,code_postal,villes,pays) " +
+                            "VALUES(@libelle,@numero,@cp,@villes,@pays)";
+                        cmd.Parameters.AddWithValue("@libelle", adresseClient.Text);
+                        cmd.Parameters.AddWithValue("@numero", numClient.Text);
+                        cmd.Parameters.AddWithValue("@cp", postalClient.Text);
+                        cmd.Parameters.AddWithValue("@ville", villeClient.Text);
+                        cmd.Parameters.AddWithValue("@pays", paysClient.Text);
+                        cmd.ExecuteNonQuery();
 
+                        cmd.CommandText = "SELECT id_adresse FROM adresse" +
+                        "WHERE libelle = @libelle " +
+                        "AND numero = @numero " +
+                        "AND code_postal = @cp " +
+                        "AND villes = @ville " +
+                        "AND pays = @pays;";
+                        cmd.Parameters.AddWithValue("@libelle", adresseClient.Text);
+                        cmd.Parameters.AddWithValue("@numero", numClient.Text);
+                        cmd.Parameters.AddWithValue("@cp", postalClient.Text);
+                        cmd.Parameters.AddWithValue("@ville", villeClient.Text);
+                        cmd.Parameters.AddWithValue("@pays", paysClient.Text);
+                        da = new System.Data.SQLite.SQLiteDataAdapter(cmd);
+                        ds.Clear();
+                        da.Fill(ds);
+                        while (i < ds.Tables[0].Rows.Count)
+                        {
+                            id_adresse = ds.Tables[0].Rows[i].ItemArray[0].ToString();
+                            i++;
+                        }
+                    }
                     con.Close();
 
-                    Response.Redirect("CreationPlan.aspx");
+                    Session["nomProjet"] = nomProjet.Text;
+                    Session["dateProjet"] = DateTime.Now.ToString("yyyy/MM/dd");
+                    Session["idClient"] = client.SelectedValue;
+                    Session["idAdresse"] = id_adresse;
                 }
             }
+            Response.Redirect("/Configuration");
         }
     }
 }
