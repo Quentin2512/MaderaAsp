@@ -16,6 +16,8 @@
                 <br/>
                 <asp:ListBox runat="server" CssClass="form-control" ID="listeOptions"/><br/>
                 <br/>
+                <asp:Button runat="server" Text="Valider" CssClass="btn btn-primary"/>
+                <br/>
             </div>
         </div>
     </div>
