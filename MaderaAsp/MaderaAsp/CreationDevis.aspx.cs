@@ -47,11 +47,11 @@ namespace MaderaAsp
                 con.Open();
                 using (var cmd = con.CreateCommand())
                 {
-                    cmd.CommandText = "SELECT id_adresse FROM adresse" +
+                    cmd.CommandText = "SELECT id_adresse FROM adresse " +
                         "WHERE libelle = @libelle " +
                         "AND numero = @numero " +
                         "AND code_postal = @cp " +
-                        "AND villes = @ville " +
+                        "AND ville = @ville " +
                         "AND pays = @pays;";
                     cmd.Parameters.AddWithValue("@libelle", adresseClient.Text);
                     cmd.Parameters.AddWithValue("@numero", numClient.Text);
@@ -72,8 +72,8 @@ namespace MaderaAsp
                     }
                     else
                     {
-                        cmd.CommandText = "INSERT INTO adresse(libelle,numero,code_postal,villes,pays) " +
-                            "VALUES(@libelle,@numero,@cp,@villes,@pays)";
+                        cmd.CommandText = "INSERT INTO adresse(libelle,numero,code_postal,ville,pays) " +
+                            "VALUES(@libelle,@numero,@cp,@ville,@pays)";
                         cmd.Parameters.AddWithValue("@libelle", adresseClient.Text);
                         cmd.Parameters.AddWithValue("@numero", numClient.Text);
                         cmd.Parameters.AddWithValue("@cp", postalClient.Text);
@@ -81,11 +81,11 @@ namespace MaderaAsp
                         cmd.Parameters.AddWithValue("@pays", paysClient.Text);
                         cmd.ExecuteNonQuery();
 
-                        cmd.CommandText = "SELECT id_adresse FROM adresse" +
+                        cmd.CommandText = "SELECT id_adresse FROM adresse " +
                         "WHERE libelle = @libelle " +
                         "AND numero = @numero " +
                         "AND code_postal = @cp " +
-                        "AND villes = @ville " +
+                        "AND ville = @ville " +
                         "AND pays = @pays;";
                         cmd.Parameters.AddWithValue("@libelle", adresseClient.Text);
                         cmd.Parameters.AddWithValue("@numero", numClient.Text);
@@ -109,7 +109,7 @@ namespace MaderaAsp
                     Session["idAdresse"] = id_adresse;
                 }
             }
-            Response.Redirect("/Configuration");
+            Response.Redirect("/CreationPlan");
         }
     }
 }

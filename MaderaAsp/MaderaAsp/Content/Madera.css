@@ -13,9 +13,6 @@
 #band2 {
     height: 150px;
     width: 100%;
-    /*position: fixed;
-    bottom: 0px;
-    left: 0px;*/
     margin-top:50px;
     background-color: darkolivegreen;
 }
@@ -35,4 +32,8 @@ h1 {
 #valSum {
     font-weight: bold;
     color: red;
+}
+#plan{
+    height:215px;
+    width:300px;
 }

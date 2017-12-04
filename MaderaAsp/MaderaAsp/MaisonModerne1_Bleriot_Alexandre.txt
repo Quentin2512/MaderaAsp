@@ -1,0 +1,26 @@
+SOCIETE MADERA
+----------
+DEVIS :
+Nom : MaisonModerne1
+Créé le : 2017/12/04
+----------
+CLIENT :
+Nom : Bleriot
+Prénom : Alexandre
+Mail : a.b@gmail.com
+Téléphone : 0606060606
+Adresse : 2 place de l'Ismans, 72000 LE MANS, France
+----------
+MAISON :
+Gamme : Moderne
+Nombre étages : 2
+Forme : Carré
+----------
+DETAILS :
+Etage : 0 -> 5 Mur classique 17 : 850€
+Etage : 0 -> 3 Fenêtre simple : 150€
+Etage : 1 -> 5 Mur classique 9 : 450€
+Etage : 1 -> 3 Fenêtre double  : 270€
+----------
+COUT TOTAL : 1720€
+..........
